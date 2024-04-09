@@ -1,7 +1,7 @@
+/* CUSTOM PROP */
 :root {
     --header-heigth: 80px;
 }
-
 
 /* RESET */
 * {
@@ -17,14 +17,62 @@ img {
 }
 
 
+/* UTILITIES */
+.flex {
+    display: flex;
+}
+
+.just-cont-ctr {
+    justify-content: center;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.container {
+    width: 40%;
+    background-color: lightseagreen;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+
 /* COMMON */
 
-header {
-    height: var(--header-heigth);
-    background-color: lightcoral;
+body {
+    font-family: monospace;
+    color: white;
+    font-weight: bold;
 }
 
 main {
-    height: calc(100vh - var(--header-heigth));
+    height: 100vh;
     background-color: lightblue;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+main > input {
+    border: none;
+    padding: 10px;
+    background-color: lightgreen;
+    font-family: inherit;
+    color: inherit;
+    font-weight: inherit;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* CELL */
+
+.cell {
+    
+    width: calc(100% / 10);
+    aspect-ratio: 1;
+    align-items: center;
+    background-color: lightsalmon;
+    border: 1px solid black;
+    cursor: pointer;
+    font-size: 20px;
 }
