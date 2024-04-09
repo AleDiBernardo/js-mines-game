@@ -3,6 +3,8 @@
  * @date 4/9/2024 - 4:02:42 PM
  */
 function handleStartClick() {
+    playground.style.pointerEvents = "auto";
+
   if (startClickCounter > 0) {
     playground.innerHTML = "";
     cell.style.backgroundColor = "lightsalmon";
@@ -33,6 +35,7 @@ function createGrid() {
     playground.append(cell);
   }
 
+
   startClickCounter++;
 }
 
@@ -44,7 +47,7 @@ function cellClicked() {
   if (bombs.includes(parseInt(this.innerHTML))) {
     this.style.backgroundColor = "red";
     result.innerHTML = `Hai perso dopo ${points} tentativi`;
-    // cellNodeList.style.pointerEvents = "none";
+    playground.style.pointerEvents = "none";
   } else {
     this.style.backgroundColor = "blue";
 
@@ -53,6 +56,8 @@ function cellClicked() {
     }
     points++;
   }
+  console.log(points);
+  this.removeEventListener("click", cellClicked);
 
   //debug
 }
