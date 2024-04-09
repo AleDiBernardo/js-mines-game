@@ -1,0 +1,30 @@
+:root {
+    --header-heigth: 80px;
+}
+
+
+/* RESET */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+/* IMG RESET */
+img {
+    max-width: 100%;
+}
+
+
+/* COMMON */
+
+header {
+    height: var(--header-heigth);
+    background-color: lightcoral;
+}
+
+main {
+    height: calc(100vh - var(--header-heigth));
+    background-color: lightblue;
+}
