@@ -32,7 +32,7 @@ img {
 
 .container {
     width: 40%;
-    background-color: lightseagreen;
+    /* background-color: lightseagreen; */
     margin-bottom: 20px;
     flex-wrap: wrap;
 }
@@ -73,7 +73,7 @@ main > input {
     aspect-ratio: 1;
     align-items: center;
     background-color: lightsalmon;
-    border: 1px solid black;
+    border: 1px solid white;
     cursor: pointer;
     font-size: 20px;
 }

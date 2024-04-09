@@ -5,6 +5,11 @@
 function handleStartClick() {
   if (startClickCounter > 0) {
     playground.innerHTML = "";
+    cell.style.backgroundColor = "lightsalmon";
+    result.innerHTML = "";
+    bombs = [];
+    points = 0;
+
     createGrid();
   } else {
     createGrid();
@@ -36,26 +41,34 @@ function createGrid() {
  * @date 4/9/2024 - 3:42:48 PM
  */
 function cellClicked() {
-  if (startClickCounter > 0) {
-    this.style.backgroundColor = "lightsalmon";
-  }
-
   if (bombs.includes(parseInt(this.innerHTML))) {
     this.style.backgroundColor = "red";
+    result.innerHTML = `Hai perso dopo ${points} tentativi`;
+    // cellNodeList.style.pointerEvents = "none";
   } else {
     this.style.backgroundColor = "blue";
+
+    if (points + bombs.length + 1 === cellNum) {
+      result.innerHTML = `HAI VINTO`;
+    }
+    points++;
   }
+
   //debug
-  console.log("cella numero: " + this.innerHTML);
 }
 
-function generateBombs(){
-    let max = 100;
-    let min = 0;
-    let i = 0;
-    while (i < bombNum) {
-        bombs[i] = parseInt(Math.floor(Math.random() * (max - min)) + min);
-        i++;
+/**
+ * Fill bomb array with random number from 0 to 99
+ * @date 4/9/2024 - 4:57:39 PM
+ */
+function generateBombs() {
+  while (bombs.length < bombNum) {
+    let randomNumber = Math.floor(Math.random() * (cellNum - 0)) + 1;
+    if (!bombs.includes(randomNumber)) {
+      bombs.push(randomNumber);
     }
-    console.log("Array: "+bombs);
+  }
+
+  //cheat
+  console.log("BOMBE: ", bombs);
 }
