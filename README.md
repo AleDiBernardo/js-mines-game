@@ -22,11 +22,11 @@ Le validazioni e i controlli possiamo farli anche in un secondo momento.
 ## Soluzione
 
 ### Creazione della griglia:
-- [ ] Creazione del bottone start
-    - [ ] aggiunta event listener al bottone
-        - [ ] quando viene cliccato parte un ciclo 
+- [x] Creazione del bottone start
+    - [x] aggiunta event listener al bottone
+        - [x] quando viene cliccato parte un ciclo 
                 che riempie la griglia con 100 celle
-            - [ ] aggiunta event listener alla cella
+            - [x] aggiunta event listener alla cella
                     - quando cliccata la colora
 
 
