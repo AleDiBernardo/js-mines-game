@@ -3,7 +3,7 @@
  * @date 4/9/2024 - 4:02:42 PM
  */
 function handleStartClick() {
-    playground.style.pointerEvents = "auto";
+  playground.style.pointerEvents = "auto";
 
   if (startClickCounter > 0) {
     playground.innerHTML = "";
@@ -35,7 +35,6 @@ function createGrid() {
     playground.append(cell);
   }
 
-
   startClickCounter++;
 }
 
@@ -46,7 +45,7 @@ function createGrid() {
 function cellClicked() {
   if (bombs.includes(parseInt(this.innerHTML))) {
     this.style.backgroundColor = "red";
-    result.innerHTML = `Hai perso dopo ${points} tentativi`;
+    result.innerHTML = `Hai perso dopo ${points + 1} tentativi`;
     playground.style.pointerEvents = "none";
   } else {
     this.style.backgroundColor = "blue";
@@ -56,6 +55,8 @@ function cellClicked() {
     }
     points++;
   }
+  this.innerHTML = "";
+
   console.log(points);
   this.removeEventListener("click", cellClicked);
 
